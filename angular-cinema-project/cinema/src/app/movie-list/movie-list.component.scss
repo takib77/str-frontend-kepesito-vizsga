@@ -1,1 +1,39 @@
-.table-section {}
+@import "_mixin.scss";
+
+.table-section {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    #get-button {
+        @include cinema-background-style;
+        @include set-text;
+        margin: 2em auto;
+        width: 25%;
+    }
+    table {
+        thead {
+            tr {
+                th {
+                    @include cinema-background-style;
+                    @include set-text;
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    @include set-text;
+                }
+                #delete-button {
+                    @include delete-style;
+                }
+            }
+            tr:nth-child(even) {
+                background-color: rgb(170, 170, 170);
+            }
+        }
+    } 
+}
+
